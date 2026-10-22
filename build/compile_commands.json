@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/Andrew/dev/cenui/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\cc.exe -DSB_CONFIG_UNITY -IC:/Users/Andrew/dev/cenui/build/_deps/sheenbidi-src/Headers -IC:/Users/Andrew/dev/cenui/build/_deps/sheenbidi-src/Source -w -o _deps\\sheenbidi-build\\CMakeFiles\\SheenBidi.dir\\Source\\SheenBidi.c.obj -c C:\\Users\\Andrew\\dev\\cenui\\build\\_deps\\sheenbidi-src\\Source\\SheenBidi.c",
+  "file": "C:/Users/Andrew/dev/cenui/build/_deps/sheenbidi-src/Source/SheenBidi.c",
+  "output": "C:/Users/Andrew/dev/cenui/build/_deps/sheenbidi-build/CMakeFiles/SheenBidi.dir/Source/SheenBidi.c.obj"
+}
+]
