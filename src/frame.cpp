@@ -193,6 +193,10 @@ Frame* Frame::appendTo(Frame* other) {
 		return this;
 	}
 
+	if (parent) {
+		emancipate();
+	}
+
 	if (!other->firstChild) {
 		other->firstChild = this;
 		parent = other;
@@ -230,8 +234,15 @@ Frame* Frame::appendTo(Frame* other) {
 	return this;
 }
 
+Frame* Frame::append(Frame* other) {
+	other->appendTo(this);
+	return other;
+}
+
 // Removes the frame from child-ship of the parent.
-void Frame::emancipate() {}
+void Frame::emancipate() {
+	// TODO: this lol
+}
 
 Frame* Frame::editFirstChild() {
 	return firstChild;

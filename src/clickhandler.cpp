@@ -66,7 +66,6 @@ void ClickHandler::handleMouseDown(const sf::RenderWindow& win) {
 		v.getCenter().y - v.getSize().y * 0.5f
 	);
 	sf::Vector2f mPos = win.mapPixelToCoords(sf::Mouse::getPosition(win));
-	std::cout << mPos.x << " "<< mPos.y << "\n";
 	downFrame = findHoveredChildRecursive(root, win.mapPixelToCoords(sf::Mouse::getPosition(win)), topLeft, v.getSize());	
 }
 void ClickHandler::handleMouseUp(const sf::RenderWindow& win) {

@@ -1630,5 +1630,11 @@
   "command": "C:\\msys64\\ucrt64\\bin\\c++.exe -DSFML_STATIC -IC:/Users/Andrew/dev/cenui/include -isystem C:/Users/Andrew/dev/cenui/build/_deps/sfml-src/include -g -o tests\\CMakeFiles\\test1.dir\\test1.cpp.obj -c C:\\Users\\Andrew\\dev\\cenui\\tests\\test1.cpp",
   "file": "C:/Users/Andrew/dev/cenui/tests/test1.cpp",
   "output": "C:/Users/Andrew/dev/cenui/build/tests/CMakeFiles/test1.dir/test1.cpp.obj"
+},
+{
+  "directory": "C:/Users/Andrew/dev/cenui/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\c++.exe -DSFML_STATIC -IC:/Users/Andrew/dev/cenui/include -isystem C:/Users/Andrew/dev/cenui/build/_deps/sfml-src/include -g -o tests\\CMakeFiles\\example.dir\\example.cpp.obj -c C:\\Users\\Andrew\\dev\\cenui\\tests\\example.cpp",
+  "file": "C:/Users/Andrew/dev/cenui/tests/example.cpp",
+  "output": "C:/Users/Andrew/dev/cenui/build/tests/CMakeFiles/example.dir/example.cpp.obj"
 }
 ]

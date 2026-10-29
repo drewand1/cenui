@@ -61,7 +61,6 @@ public:
 	const Frame* getChildByID(std::string id) const;
 	sf::Text& getSFText();
 
-
 	// Setters
 	Frame* position(const UIDimensions& pos);
 	Frame* size(const UIDimensions& sz);
@@ -86,6 +85,9 @@ public:
 
 	// Makes the frame the child of the argument.
 	Frame* appendTo(Frame* other);
+
+	// Makes the argument frame the current frame's child. Returns the argument frame.
+	Frame* append(Frame* other);
 
 	// Removes the frame from child-ship of the parent.
 	void emancipate();

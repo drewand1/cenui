@@ -5678,6 +5678,43 @@ build tests/test1.exe: CXX_EXECUTABLE_LINKER__test1_Debug tests/CMakeFiles/test1
   TARGET_IMPLIB = tests\libtest1.dll.a
   TARGET_PDB = test1.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target example
+
+
+#############################################
+# Order-only phony target for example
+
+build cmake_object_order_depends_target_example: phony || cmake_object_order_depends_target_cenui cmake_object_order_depends_target_freetype cmake_object_order_depends_target_harfbuzz cmake_object_order_depends_target_sfml-graphics cmake_object_order_depends_target_sfml-system cmake_object_order_depends_target_sfml-window
+
+build tests/CMakeFiles/example.dir/example.cpp.obj: CXX_COMPILER__example_unscanned_Debug C$:/Users/Andrew/dev/cenui/tests/example.cpp || cmake_object_order_depends_target_example
+  CONFIG = Debug
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = tests\CMakeFiles\example.dir\example.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -IC:/Users/Andrew/dev/cenui/include -isystem C:/Users/Andrew/dev/cenui/build/_deps/sfml-src/include
+  OBJECT_DIR = tests\CMakeFiles\example.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\example.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target example
+
+
+#############################################
+# Link the executable tests\example.exe
+
+build tests/example.exe: CXX_EXECUTABLE_LINKER__example_Debug tests/CMakeFiles/example.dir/example.cpp.obj | libcenui.a _deps/sfml-build/lib/libsfml-graphics-s-d.a _deps/sfml-build/lib/libsfml-window-s-d.a _deps/sfml-build/lib/libsfml-system-s-d.a _deps/sfml-build/lib/libharfbuzzd.a _deps/sfml-build/lib/libfreetyped.a || _deps/sfml-build/lib/libfreetyped.a _deps/sfml-build/lib/libharfbuzzd.a _deps/sfml-build/lib/libsfml-graphics-s-d.a _deps/sfml-build/lib/libsfml-system-s-d.a _deps/sfml-build/lib/libsfml-window-s-d.a libcenui.a
+  CONFIG = Debug
+  FLAGS = -g
+  LINK_LIBRARIES = libcenui.a  _deps/sfml-build/lib/libsfml-graphics-s-d.a  _deps/sfml-build/lib/libsfml-window-s-d.a  _deps/sfml-build/lib/libsfml-system-s-d.a  -lopengl32  -lwinmm  -lgdi32  _deps/sfml-build/lib/libharfbuzzd.a  _deps/sfml-build/lib/libfreetyped.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = tests\CMakeFiles\example.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = tests\example.exe
+  TARGET_IMPLIB = tests\libexample.dll.a
+  TARGET_PDB = example.exe.dbg
+
 
 #############################################
 # Utility command for package
@@ -5832,6 +5869,10 @@ build NightlyUpdate: phony _deps/sheenbidi-build/NightlyUpdate
 build SheenBidi: phony _deps/sheenbidi-build/SheenBidi
 
 build cenui: phony libcenui.a
+
+build example: phony tests/example.exe
+
+build example.exe: phony tests/example.exe
 
 build freetype: phony _deps/sfml-build/lib/libfreetyped.a
 
@@ -6090,7 +6131,7 @@ build _deps/vorbis-build/lib/all: phony _deps/sfml-build/lib/libvorbisd.a _deps/
 #############################################
 # Folder: C:/Users/Andrew/dev/cenui/build/tests
 
-build tests/all: phony tests/testzero.exe tests/test1.exe
+build tests/all: phony tests/testzero.exe tests/test1.exe tests/example.exe
 
 # =============================================================================
 # Built-in targets

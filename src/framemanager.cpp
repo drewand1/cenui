@@ -29,7 +29,6 @@ void FrameManager::drawFrames(sf::RenderWindow& window) {
 }
 
 void FrameManager::handleMouseDown(const sf::RenderWindow& window) {
-	rtWarn("0");
 	clickHandler.handleMouseDown(window);
 }
 
