@@ -70,25 +70,25 @@ set_target_properties(MbedTLS::mbedtls PROPERTIES
   INTERFACE_LINK_LIBRARIES "ws2_32;bcrypt;MbedTLS::mbedx509"
 )
 
-# Import target "MbedTLS::mbedcrypto" for configuration ""
-set_property(TARGET MbedTLS::mbedcrypto APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
+# Import target "MbedTLS::mbedcrypto" for configuration "Debug"
+set_property(TARGET MbedTLS::mbedcrypto APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(MbedTLS::mbedcrypto PROPERTIES
-  IMPORTED_LINK_INTERFACE_LANGUAGES_NOCONFIG "C"
-  IMPORTED_LOCATION_NOCONFIG "C:/Users/Andrew/dev/cenui/build/_deps/sfml-build/lib/libmbedcrypto.a"
+  IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "C"
+  IMPORTED_LOCATION_DEBUG "C:/Users/Andrew/dev/cenui/build/_deps/sfml-build/lib/libmbedcryptod.a"
   )
 
-# Import target "MbedTLS::mbedx509" for configuration ""
-set_property(TARGET MbedTLS::mbedx509 APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
+# Import target "MbedTLS::mbedx509" for configuration "Debug"
+set_property(TARGET MbedTLS::mbedx509 APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(MbedTLS::mbedx509 PROPERTIES
-  IMPORTED_LINK_INTERFACE_LANGUAGES_NOCONFIG "C"
-  IMPORTED_LOCATION_NOCONFIG "C:/Users/Andrew/dev/cenui/build/_deps/sfml-build/lib/libmbedx509.a"
+  IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "C"
+  IMPORTED_LOCATION_DEBUG "C:/Users/Andrew/dev/cenui/build/_deps/sfml-build/lib/libmbedx509d.a"
   )
 
-# Import target "MbedTLS::mbedtls" for configuration ""
-set_property(TARGET MbedTLS::mbedtls APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
+# Import target "MbedTLS::mbedtls" for configuration "Debug"
+set_property(TARGET MbedTLS::mbedtls APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(MbedTLS::mbedtls PROPERTIES
-  IMPORTED_LINK_INTERFACE_LANGUAGES_NOCONFIG "C"
-  IMPORTED_LOCATION_NOCONFIG "C:/Users/Andrew/dev/cenui/build/_deps/sfml-build/lib/libmbedtls.a"
+  IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "C"
+  IMPORTED_LOCATION_DEBUG "C:/Users/Andrew/dev/cenui/build/_deps/sfml-build/lib/libmbedtlsd.a"
   )
 
 # This file does not depend on other imported targets which have

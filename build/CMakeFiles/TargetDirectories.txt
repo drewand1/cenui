@@ -246,6 +246,7 @@ C:/Users/Andrew/dev/cenui/build/_deps/vorbis-build/lib/CMakeFiles/install.dir
 C:/Users/Andrew/dev/cenui/build/_deps/vorbis-build/lib/CMakeFiles/install/local.dir
 C:/Users/Andrew/dev/cenui/build/_deps/vorbis-build/lib/CMakeFiles/install/strip.dir
 C:/Users/Andrew/dev/cenui/build/tests/CMakeFiles/testzero.dir
+C:/Users/Andrew/dev/cenui/build/tests/CMakeFiles/test1.dir
 C:/Users/Andrew/dev/cenui/build/tests/CMakeFiles/package.dir
 C:/Users/Andrew/dev/cenui/build/tests/CMakeFiles/package_source.dir
 C:/Users/Andrew/dev/cenui/build/tests/CMakeFiles/edit_cache.dir
