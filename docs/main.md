@@ -13,8 +13,6 @@ Very basic example that displays one frame with a button in the middle:
 #include <cenui.h>
 #include <iostream>
 
-
-
 void clickCallback(cenui::Frame* clickedFrame) {
 	std::cout << "Hello world!" << std::endl;
 }
@@ -31,14 +29,13 @@ int main() {
 
 	cenui::Frame* button = panel->append(new cenui::Frame("button"))
 		->anchor({0.5f, 0.5f})
-		->position({{0.5f, 0.5f}, {0, 0}})	// TODO: make overloads for u and f
+		->position({{0.5f, 0.5f}, {0, 0}})
 		->size({{0, 0}, {200, 100}})
 		->text("Click me!")
 		->font(font)
 		->characterSize(16u)
 		->bgColor({200, 255, 200, 255})
 		->onClick(clickCallback);
-
 
 	while (window.isOpen()) {
 		while (const std::optional event = window.pollEvent()) {
@@ -89,7 +86,7 @@ won't set an onClick callback for any of your frames, you don't have to call
 those.
 
 ### Frames
-A cenui Frame is a class that represents one UI element. Here's the general form
+A cenui [Frame](api/frame.md) is a class that represents one UI element. Here's the general form
 for how to create one:
 ```c++
 cenui::Frame* frame = parentFrame->append("Frame ID")
@@ -127,3 +124,24 @@ folder as your executable.
 `delete`. You must, then, allocate frames with `new`. Non-heap-allocated frames
 causes undefined behavior and will probably crash your program.
 
+### UIDimensions (positioning and sizing)
+Frames are positioned and sized using the [UIDimensions](api/uidimensions.md)
+struct, which contains two `sf::Vector2f`s: `scale` and `offset`. `scale` is a
+fraction of the parent's size. `offset` is a raw pixel offset added onto the
+absolute size or position after the scale is applied. It can be constructed with
+a literal of the following form: `{{scaleX, scaleY}, {offsetX, offsetY}}`. A
+UIDimensions `{{0.5f, 0.5f}, {-50, 20}}` means half of the parent on each axis,
+minus 50px on the x axis, plus 20px on the y axis.
+
+## Gotchas
+There are a few quirks that come with the fact that this library was thrown
+together in a week as a tool to support another project with very simple UI
+demands and thus the library runs not on C++ but on hopes and prayers. Here are
+a few things you should keep in mind:
+- The draw order of child frames is set in stone. Children appended later will
+be drawn above children appended before. There is no way to change the order
+except for planning ahead and appending child frames in the order you want.
+- The frame has an `emancipate` method that removes it from its parent. It is
+not yet implemented. There is no way to remove a frame from child-ship of its
+parent. Furthermore, calling `appendTo` on a frame when it already has a parent
+will cause problems.
