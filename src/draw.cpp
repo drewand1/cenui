@@ -1,6 +1,9 @@
 #include <cenui/draw.h>
 
 void cenui::drawFrameRecursive(cenui::Frame* frame, sf::RenderWindow& window, sf::Vector2f parentPosition, sf::Vector2f parentSize) {
+	if (!frame->visible())
+		return;
+
 	sf::Vector2f absSz = sf::Vector2f(
 		frame->size().scale.x * parentSize.x,
 		frame->size().scale.y * parentSize.y
