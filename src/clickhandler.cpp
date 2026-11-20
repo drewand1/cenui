@@ -5,9 +5,6 @@
 // Helper functions
 
 cenui::Frame* findHoveredChildRecursive(cenui::Frame* frame, sf::Vector2f mousePos, sf::Vector2f parentPos, sf::Vector2f parentSz) {
-	if (!frame->visible())
-		return nullptr;
-
 	sf::Vector2f absSz = sf::Vector2f(	// This is indeed duplicate code from drawFrameRecursive. I do not care!
 		frame->size().scale.x * parentSz.x,
 		frame->size().scale.y * parentSz.y
@@ -28,7 +25,7 @@ cenui::Frame* findHoveredChildRecursive(cenui::Frame* frame, sf::Vector2f mouseP
 			return siblingResult;
 	}
 
-	if (!mouseInBounds)
+	if (!frame->visible() || !mouseInBounds)
 		return nullptr;
 	
 	// If this frame has a click callback, disregard children and treat this

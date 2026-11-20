@@ -79,6 +79,7 @@ const Frame* Frame::getChildByID(std::string id) const {
 	while (child) {
 		if (child->id == id)
 			return child;
+		child = child->nextSibling;
 	}
 
 	return nullptr;
@@ -258,6 +259,7 @@ Frame* Frame::editChildByID(const std::string& id) {
 	while (child) {
 		if (child->id == id)
 			return child;
+		child = child->nextSibling;
 	}
 
 	return nullptr;
